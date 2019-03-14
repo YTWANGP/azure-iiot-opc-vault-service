@@ -54,7 +54,6 @@
             <Button x:Name="CreatePushButton"
                 Font="small"
                 VerticalOptions="EndAndExpand"
-                Clicked="OnCreatePush"
                 Margin="0,40,0,0"
                 IsVisible="False">
             </Button>
