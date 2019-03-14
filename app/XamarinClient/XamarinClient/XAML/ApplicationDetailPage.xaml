@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinClient.XAML.ApplicationDetailPage"
+             Title="Application Details">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20" VerticalOptions="StartAndExpand">
+                <Label Text="ApplicationId" />
+                <Entry x:Name="ApplicationIdEntry" Text="{Binding Path=ApplicationId}" InputTransparent="True" />
+                <Label Text="Id" />
+                <Entry x:Name="IdEntry" Text="{Binding Path=Id}"  InputTransparent="True" />
+                <Label Text="State" />
+                <Entry x:Name="StateEntry" Text="{Binding Path=State}"  InputTransparent="True" />
+                <Label Text="ApplicationName" />
+                <Entry x:Name="ApplicationNameEntry" Text="{Binding Path=ApplicationName}"  InputTransparent="True" />
+                <Label Text="ApplicationUri" />
+                <Entry x:Name="ApplicationUriEntry" Text="{Binding Path=ApplicationUri}"  InputTransparent="True" />
+                <Label Text="ApplicationType" />
+                <Entry x:Name="ApplicationTypeEntry" Text="{Binding Path=ApplicationType}"  InputTransparent="True" />
+                <Label Text="ProductUri" />
+                <Entry x:Name="ProductUriEntry" Text="{Binding Path=ProductUri}"  InputTransparent="True" />
+                <Label Text="DiscoveryUrls" />
+                <Picker x:Name="DiscoveryUrlsPicker" ItemsSource = "{Binding Path=DiscoveryUrls}" />
+                <Label Text="ServerCapabilities" />
+                <Entry x:Name="ServerCapabilitiessEntry" Text="{Binding Path=ServerCapabilities}"  InputTransparent="True" />
+                <Button Text="New Request" Font="small" VerticalOptions="EndAndExpand" Clicked="OnNewRequest" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -10,6 +10,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="SDK\**" />
+    <Compile Remove="Stack\**" />
+    <Compile Remove="XamarinClient\**" />
+    <Content Remove="SDK\**" />
+    <Content Remove="Stack\**" />
+    <Content Remove="XamarinClient\**" />
+    <EmbeddedResource Remove="SDK\**" />
+    <EmbeddedResource Remove="Stack\**" />
+    <EmbeddedResource Remove="XamarinClient\**" />
+    <None Remove="SDK\**" />
+    <None Remove="Stack\**" />
+    <None Remove="XamarinClient\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.5.1" />
     <PackageReference Include="System.Net.Security" Version="4.3.2" />
     <PackageReference Include="Autofac" Version="4.8.1" />
@@ -50,5 +65,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Update="appsettings.*.json" CopyToPublishDirectory="Never" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="GDS\Server\gdsdb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Update="GDS\Server\gdsdb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
   </ItemGroup>
 </Project>

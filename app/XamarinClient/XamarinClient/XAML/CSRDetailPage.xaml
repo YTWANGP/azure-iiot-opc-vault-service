@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinClient.XAML.CSRDetailPage"
+             Title="View Certificate Request Details">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20" VerticalOptions="StartAndExpand">
+                <Label Text="ApplicationName" />
+                <Entry x:Name="ApplicationNameEntry" Text="{Binding Path=ApplicationName}"  InputTransparent="True" />
+                <Label Text="ApplicationUri" />
+                <Entry x:Name="ApplicationUriEntry" Text="{Binding Path=ApplicationUri}"  InputTransparent="True" />
+                <Label Text="CertificateGroupId" />
+                <Entry x:Name="CertificateGroupIdEntry" Text="{Binding Path=CertificateGroupId}"  InputTransparent="True" />
+                <Label Text="CertificateTypeId" />
+                <Entry x:Name="CertificateTypeIdEntry" Text="{Binding Path=CertificateTypeId}"  InputTransparent="True" />
+                <Label Text="State" />
+                <Entry x:Name="State" Text="{Binding Path=State}" InputTransparent="True"/>
+                <Label x:Name="Cert" Text="Certificate as Base64" />
+                <Entry x:Name="CertEntry" IsVisible="False"/>
+                <Label x:Name="Issuer" Text="Issuer as Base64" />
+                <Entry x:Name="IssuerEntry" IsVisible="False"/>
+                <Label x:Name="Crl" Text="Crl as Base64" />
+                <Entry x:Name="CrlEntry" IsVisible="False"/>
+                <Button x:Name="DownloadCertBtn" Text="Download Certificate to Server" Font="small" VerticalOptions="EndAndExpand" Clicked="OnDownloadCert" IsVisible="false"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

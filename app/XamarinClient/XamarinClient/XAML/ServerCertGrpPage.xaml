@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage  xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="XamarinClient.XAML.ServerCertGrpPage"
+            Title="Server Certificate Group">
+    <ScrollView>
+        <StackLayout Margin="10" VerticalOptions="StartAndExpand">
+            <ListView x:Name ="listView" Margin="20" IsGroupingEnabled="true" HasUnevenRows="true" SeparatorColor="DarkGray" >
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Title}" FontSize="Small"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="20">
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding Subject}"  FontSize="14" />
+                                    <Label Text="Valid From " FontSize="12" />
+                                    <Label Text="{Binding ValidFrom}" FontSize="12" />
+                                    <Label Text="Valid To " FontSize="12"/>
+                                    <Label Text="{Binding ValidTo}" FontSize="12"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button x:Name="ClickedButton"
+                    Font="small"
+                    VerticalOptions="EndAndExpand"
+                    Clicked="OnClick"
+                    Margin="0,40,0,0">
+            </Button>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

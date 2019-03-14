@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="XamarinClient.XAML.RegisterPage"
+			 Title="Register New OPC UA Application">
+	<ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20" VerticalOptions="StartAndExpand">
+                <Label Text="Connect to OPC UA server with administrator username/password"
+                       FontSize="Micro" >
+                </Label>
+
+                <Label Text="OPC UA server endpoint URL"
+                       FontSize="Small" >
+                </Label>
+
+                <Entry x:Name="EntryUrl"
+                       Placeholder="endpointURL" >
+                </Entry>
+
+                <Label Text="Username"
+                       FontSize="Small" >
+                </Label>
+
+                <Entry x:Name="UsernameEntry"
+                       Placeholder="sysadmin">
+                </Entry>
+
+                <Label Text="Password"
+                       FontSize="Small" >
+                </Label>
+
+                <Entry x:Name="PasswordEntry"
+                       IsPassword="true"
+                       Placeholder="demo">
+                </Entry>
+
+                <Button x:Name="ConnectButton"
+                    Text="Connect"
+                    Font="small"
+                    HorizontalOptions="End"
+                    Clicked="OnConnect"
+                    Margin="0,40,0,0">
+                </Button>
+
+                <ActivityIndicator x:Name="ConnectIndicator" 
+                    IsRunning="False"
+                    Color="DarkGray"/>
+
+                <Label Text="ApplicationName" />
+                <Entry x:Name="ApplicationNameEntry" />
+                <Label Text="ApplicationUri" />
+                <Entry x:Name="ApplicationUriEntry"/>
+                <Label Text="ApplicationType" />
+                <Entry x:Name="ApplicationTypeEntry" />
+                <Label Text="ProductUri" />
+                <Entry x:Name="ProductUriEntry"/>
+                <Label Text="DiscoveryUrls" />
+                <Picker x:Name="DiscoveryUrlsPicker" />
+                <Label Text="ServerCapabilities*" />
+                <Entry x:Name="ServerCapabilitiessEntry"  />
+                <Button Text="Register" Font="small" VerticalOptions="EndAndExpand" Clicked="OnRegister" />
+                <Button Text="Clear Form" Font="small" VerticalOptions="EndAndExpand" Clicked="OnClearForm" />
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

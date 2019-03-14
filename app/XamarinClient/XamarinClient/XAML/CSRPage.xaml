@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinClient.XAML.CSRPage"
+             Title="List of Certificate Requests">
+    <ListView x:Name="listView" Margin="20" ItemSelected="OnItemSelected" SeparatorColor="DarkGray" RowHeight="100">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Padding="20,0,0,0" HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                        <Label Text="{Binding ApplicationUri}" VerticalTextAlignment="Start" />
+                        <Label Text="{Binding State}" VerticalTextAlignment="Start" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
