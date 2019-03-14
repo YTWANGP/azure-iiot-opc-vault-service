@@ -1,10 +1,10 @@
-# UA Xamarin Sample Client
-This sample runs on the following platform: Windows (UWP), Android, iOS.
+# UA Xamarin Client
+This sample runs on the following platform: Windows (UWP).
 
-The server has implemented these functionalities:
-- Connect to an OPC UA server (secure or unsecure).
-- Browse nodes.
-- Read variable nodes. 
+The client has implemented these functionalities:
+- Connect to azure-iiot-opc-vault-service to get registered OPC UA server application list and CSR request list
+- Connect to an OPC UA server with administrator to create CSR and send new request to azure-iiot-opc-vault-service.
+- Dowload new certificate and issuer from azure-iiot-opc-vault-service and push to OPC UA server.
 
 ## How to build and run the sample in Visual Studio on Windows
 
@@ -15,19 +15,12 @@ Install latest Visual Studio 2017 (min version 15.5.5).
 
 Add [Xamarin](https://developer.xamarin.com/guides/cross-platform/getting_started/installation/windows/#vs2017) to Visual Studio.
 
-### UWP:
-1. Select UA Xamarin Client.UWP as startup project.
-2. Hit `F5` to build and execute the sample.
+Create clientSecret for this xamarin app to connect to azure-iiot-opc-vault-service
+- Go to Azure portal -> Choose Azure AD Directory -> App Registration -> find OPC Vault module -> Choose Settings -> Choose Keys -> Newly Add Password for Xamarin app -> save the key value for the xamarin app using.
 
-### Android:
-1. Install [install VisualStudio Android emulator](https://www.visualstudio.com/vs/msft-android-emulator/). 
-2. Select UA Xamarin Client.Android as startup project.
+
+### UWP:
+1. Modify Settings.cs with OPC Vault module and tenant information.
+2. Select UA Xamarin Client.UWP as startup project.
 3. Hit `F5` to build and execute the sample.
 
-Tested with Android Marshmallow (6.0.0 API 23) or higher. 
-
-### iOS:
-1. To build the iOS app you need a Mac. 
-2. This [link](https://developer.xamarin.com/guides/ios/getting_started/installation/windows/introduction_to_xamarin_ios_for_visual_studio/) shows you how to build and test Xamarin iOS applications using Visual Studio.
-
-Tested with Xcode 9.2 iOS 8 or higher
