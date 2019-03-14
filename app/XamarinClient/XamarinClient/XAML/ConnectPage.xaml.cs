@@ -138,12 +138,8 @@ namespace XamarinClient.XAML
 
                         if (PushClient.IsConnected)
                         {
-                            //ConnectButton.IsEnabled = false;
-                            //ConnectIndicator.IsRunning = false;
                             if (CreatePushButton.Text == "CreateCSR")
                             {
-                                //ConnectCreateLabel.IsVisible = true;
-                                //CreatePushButton.IsVisible = true;
                                 var app = (ApplicationRecordApiModel)BindingContext;
                                 var Page = new ServerCertGrpPage(PushClient, this._opcVaultServiceClient);
                                 Page.BindingContext = app;
@@ -167,68 +163,6 @@ namespace XamarinClient.XAML
                 }
             }
         }
-
-        async void OnCreatePush(object sender, EventArgs e)
-        {
-            try
-            {
-                if (CreatePushButton.Text == "CreateCSR")
-                {
-                    if (PushClient.IsConnected)
-                    {
-                        byte[] nonce = new byte[0];
-                        var csr = Convert.ToBase64String(PushClient.CreateSigningRequest(null, PushClient.ApplicationCertificateType, null, false, null));
-                        if (csr != null)
-                        {
-                            var CreateSigningRequest = await StartSigningAsync(((ApplicationRecordApiModel)this.BindingContext).ApplicationId, csr);
-                            string ApplicationUri = ((ApplicationRecordApiModel)this.BindingContext).ApplicationUri;
-                            string ApplicationName = ((ApplicationRecordApiModel)this.BindingContext).ApplicationName;
-                            var genNewCertPage = new GenNewCertPage(this._opcVaultServiceClient, ApplicationUri, ApplicationName);
-                            genNewCertPage.BindingContext = CreateSigningRequest;
-                            DisconnectClient();
-                            await Navigation.PushAsync(genNewCertPage);
-                        }
-                    }
-                }
-            }
-            catch (Exception ee)
-            {
-                await Xamarin.Forms.Application.Current.MainPage.DisplayAlert("An error has occurred", "Exception message: " + ee.Message, "Dismiss");
-            }
-
-        }
-
-        public async Task<CreateSigningRequestApiModel> StartSigningAsync(string id, string csr)
-        {
-            try
-            {
-                var groups = await this._opcVaultServiceClient.GetCertificateGroupsConfigurationAsync();
-
-                string defaultGroupId = null, defaultTypeId = null;
-                if (groups.Groups.Count > 0)
-                {
-                    defaultGroupId = groups.Groups[0].Name;
-                    defaultTypeId = groups.Groups[0].CertificateType;
-                }
-
-                var application = await this._opcVaultServiceClient.GetApplicationAsync(id);
-
-                var request = new CreateSigningRequestApiModel()
-                {
-                    ApplicationId = id,
-                    CertificateGroupId = defaultGroupId,
-                    CertificateTypeId = defaultTypeId,
-                    CertificateRequest = csr
-                };
-                return request;
-            }
-            catch (Exception ee)
-            {
-                await Xamarin.Forms.Application.Current.MainPage.DisplayAlert("An error has occurred", "Exception message: " + ee.Message, "Dismiss");
-                return null;
-            }
-        }
-
         private static void CertificateValidator_CertificateValidation(CertificateValidator validator, CertificateValidationEventArgs e)
         {
             if (e.Error.StatusCode == StatusCodes.BadCertificateUntrusted)
