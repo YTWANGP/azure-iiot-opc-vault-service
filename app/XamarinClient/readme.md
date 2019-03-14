@@ -24,3 +24,5 @@ Create clientSecret for this xamarin app to connect to azure-iiot-opc-vault-serv
 2. Select UA Xamarin Client.UWP as startup project.
 3. Hit `F5` to build and execute the sample.
 
+## How to use the sample xamarin app
+(coming soon)
