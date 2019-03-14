@@ -9,7 +9,7 @@ using Opc.Ua.Gds.Client;
 using Xamarin.Forms;
 using System.Security.Cryptography.X509Certificates;
 
-namespace XamarinClient.viewModels
+namespace XamarinClient.Models
 {
     public class CertificateModel
     {

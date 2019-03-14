@@ -10,7 +10,6 @@ using Opc.Ua.Gds.Client;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Collections.ObjectModel;
-using XamarinClient.viewModels;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.Azure.IIoT.OpcUa.Api.Vault;
 using Microsoft.Azure.IIoT.OpcUa.Api.Vault.Models;
