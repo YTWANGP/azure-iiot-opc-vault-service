@@ -16,11 +16,11 @@ Install latest Visual Studio 2017 (min version 15.5.5).
 Add [Xamarin](https://developer.xamarin.com/guides/cross-platform/getting_started/installation/windows/#vs2017) to Visual Studio.
 
 Create clientSecret for this xamarin app to connect to azure-iiot-opc-vault-service
-- Go to Azure portal -> Choose Azure AD Directory -> App Registration -> find OPC Vault module -> Choose Settings -> Choose Keys -> Newly Add Password for Xamarin app -> save the key value for the xamarin using.
+- Go to Azure portal -> Choose Azure AD Directory -> App Registration -> find OPC Vault module -> Choose Settings -> Choose Keys -> Newly Add Password for Xamarin app -> save the key value for the xamarin app using.
 
 
 ### UWP:
-1. Modify Settings.cs with OPC Vault module information.
+1. Modify Settings.cs with OPC Vault module and tenant information.
 2. Select UA Xamarin Client.UWP as startup project.
 3. Hit `F5` to build and execute the sample.
 
