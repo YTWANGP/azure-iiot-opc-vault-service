@@ -7,7 +7,7 @@ The client has implemented these functionalities:
 
 - Connect to an OPC UA server with administrator to create CSR and send new request to azure-iiot-opc-vault-service.
 
-- Dowload new certificate and issuer from azure-iiot-opc-vault-service and push to OPC UA server.
+- Download new certificate and issuer from azure-iiot-opc-vault-service and push to OPC UA server.
 
 ## How to build and run the sample in Visual Studio on Windows
 
