@@ -2,9 +2,12 @@
 This sample runs on the following platform: Windows (UWP).
 
 The client has implemented these functionalities:
-    - Connect to azure-iiot-opc-vault-service to get registered OPC UA server application list and CSR request list
-    - Connect to an OPC UA server with administrator to create CSR and send new request to azure-iiot-opc-vault-service.
-    - Dowload new certificate and issuer from azure-iiot-opc-vault-service and push to OPC UA server.
+
+- Connect to azure-iiot-opc-vault-service to get registered OPC UA server application list and CSR request list
+
+- Connect to an OPC UA server with administrator to create CSR and send new request to azure-iiot-opc-vault-service.
+
+- Dowload new certificate and issuer from azure-iiot-opc-vault-service and push to OPC UA server.
 
 ## How to build and run the sample in Visual Studio on Windows
 
