@@ -13,7 +13,7 @@ The client has implemented these functionalities:
 2. Install latest Visual Studio 2017 (min version 15.5.5).
 3. Add [Xamarin](https://developer.xamarin.com/guides/cross-platform/getting_started/installation/windows/#vs2017) to Visual Studio.
 4. Create clientSecret for this xamarin app to connect to azure-iiot-opc-vault-service
-- Go to Azure portal -> Choose Azure AD Directory -> App Registration -> find OPC Vault module -> Choose Settings -> Choose Keys -> Newly Add Password for Xamarin app -> save the key value for the xamarin app using.
+    - Go to Azure portal -> Choose Azure AD Directory -> App Registration -> find OPC Vault module -> Choose Settings -> Choose Keys -> Newly Add Password for Xamarin app -> save the key value for the xamarin app using.
 
 ### UWP:
 1. Modify Settings.cs with OPC Vault module and tenant information.
@@ -23,15 +23,33 @@ The client has implemented these functionalities:
 ## How to use the sample xamarin app
 
 1. Create new CSR of OPC UA server
-    - click menu on the left top of app ->  click 'Application' to get the registered application list
+    - click menu on the left top of app ->  click 'Application' to get the registered application list.
+    
     ![image](https://github.com/YTWANGP/azure-iiot-opc-vault-service/blob/master/docs/Applicationlist.png)
-    - choose registered application you want to create new request and get appliction details -> click 'New Request' button
+    - choose registered application you want to create new request and get appliction details -> click 'New Request' button.
+    
     ![image](https://github.com/YTWANGP/azure-iiot-opc-vault-service/blob/master/docs/ApplicationDetails.png)
-    - Connect to the registered appliction with administrator username/password
+    - Connect to the registered appliction with administrator username/password.
+    
     ![image](https://github.com/YTWANGP/azure-iiot-opc-vault-service/blob/master/docs/ConnectServer.png)
-    - Get current Certificate group and click 'CreatCSR'
+    - Get current Certificate group and click 'CreatCSR'.
+    
     ![image](https://github.com/YTWANGP/azure-iiot-opc-vault-service/blob/master/docs/CertificateGroupBefore.png)
-    - Get CertificateRequest as Base64 encoded and click 'Generate New Certificate'
+    - Get CertificateRequest as Base64 encoded and click 'Generate New Certificate'.
+    
     ![image](https://github.com/YTWANGP/azure-iiot-opc-vault-service/blob/master/docs/GenerateNewCert.png)
-    - After CertificateRequest is created, xamarin app will navigate to 'Certificate Request' page and list CSR in 'New', 'Approved', 'Rejected' states. You can keep checking this page and when CSR is approved, you can push new certificate to server
+    - After CertificateRequest is created, xamarin app will navigate to 'Certificate Request' page and list CSR in 'New', 'Approved', 'Rejected' states. You can keep checking this page and when CSR is approved, you can push new certificate to server.
+    
     ![image](https://github.com/YTWANGP/azure-iiot-opc-vault-service/blob/master/docs/CSRList.png)
+ 
+2. Push new certificate to OPC UA server
+    - Choose approved CSR and get certificate request details with new certificate, issuer and crl as Based64 encoded.
+    
+    ![image](https://github.com/YTWANGP/azure-iiot-opc-vault-service/blob/master/docs/CSRDetails.png)
+    - Click 'Download Certificate to server' button -> connect to OPC UA server with administrator username/password -> get current certificate group -> click 'Download Certificate to server' button
+    
+    ![image](https://github.com/YTWANGP/azure-iiot-opc-vault-service/blob/master/docs/DownloadCert.png)
+    
+    - After download completely, you can check certificate group with new certificate
+    
+    ![image](https://github.com/YTWANGP/azure-iiot-opc-vault-service/blob/master/docs/CertificateGroupAfter.png)
