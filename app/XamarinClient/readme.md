@@ -9,15 +9,11 @@ The client has implemented these functionalities:
 ## How to build and run the sample in Visual Studio on Windows
 
 ### Prerequisites:
-Install Windows 10 Fall Creators Update.
-
-Install latest Visual Studio 2017 (min version 15.5.5).
-
-Add [Xamarin](https://developer.xamarin.com/guides/cross-platform/getting_started/installation/windows/#vs2017) to Visual Studio.
-
-Create clientSecret for this xamarin app to connect to azure-iiot-opc-vault-service
+1. Install Windows 10 Fall Creators Update.
+2. Install latest Visual Studio 2017 (min version 15.5.5).
+3. Add [Xamarin](https://developer.xamarin.com/guides/cross-platform/getting_started/installation/windows/#vs2017) to Visual Studio.
+4. Create clientSecret for this xamarin app to connect to azure-iiot-opc-vault-service
 - Go to Azure portal -> Choose Azure AD Directory -> App Registration -> find OPC Vault module -> Choose Settings -> Choose Keys -> Newly Add Password for Xamarin app -> save the key value for the xamarin app using.
-
 
 ### UWP:
 1. Modify Settings.cs with OPC Vault module and tenant information.
