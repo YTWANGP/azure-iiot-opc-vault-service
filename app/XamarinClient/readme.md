@@ -14,9 +14,17 @@ The client has implemented these functionalities:
 3. Add [Xamarin](https://developer.xamarin.com/guides/cross-platform/getting_started/installation/windows/#vs2017) to Visual Studio.
 4. Create clientSecret for this xamarin app to connect to azure-iiot-opc-vault-service
     - Go to Azure portal -> Choose Azure AD Directory -> App Registration -> find OPC Vault module -> Choose Settings -> Choose Keys -> Newly Add Password for Xamarin app -> save the key value for the xamarin app using.
+    
+    ![image](https://github.com/YTWANGP/azure-iiot-opc-vault-service/blob/master/docs/ClientSecrect.png)
 
 ### UWP:
 1. Modify Settings.cs with OPC Vault module and tenant information.
+   - TenantId : your tenant id
+   - AppServiceURL as OPC Vault service url, ex: https://opcvault-service.azurewebsites.net
+   - clientId : opcvault-module application id
+   - returnUri : opcvault-module reply URLs
+   - graphResourceUri : opcvault-service applicaiton id
+   - ClientSecret : opcvault-module keys
 2. Select UA Xamarin Client.UWP as startup project.
 3. Hit `F5` to build and execute the sample.
 
