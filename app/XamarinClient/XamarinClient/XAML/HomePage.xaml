@@ -4,6 +4,8 @@
 			 x:Class="XamarinClient.XAML.HomePage">
 	<ContentPage.Content>
         <StackLayout>
+            <Label VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand" FontSize="Medium">OPC UA Xamarin Sample Application</Label>
         </StackLayout>
 	</ContentPage.Content>
 </ContentPage>
