@@ -452,3 +452,4 @@ bld/
 # Overrides
 /app/XamarinClient/XamarinClient.Android
 /app/XamarinClient/XamarinClient.iOS
+/docs
