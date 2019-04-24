@@ -453,3 +453,4 @@ bld/
 /app/XamarinClient/XamarinClient.Android
 /app/XamarinClient/XamarinClient.iOS
 /docs
+/app/XamarinClient/XamarinClient/Settings_bk.cs

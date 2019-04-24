@@ -15,6 +15,9 @@ using Xamarin.Auth;
 using System.Diagnostics;
 using Microsoft.Azure.IIoT.OpcUa.Api.Vault;
 using Opc.Ua.Gds.Server.OpcVault;
+using XamarinClient.Configuration;
+using System.Threading;
+
 namespace XamarinClient.XAML
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -25,18 +28,27 @@ namespace XamarinClient.XAML
 			InitializeComponent ();
         }
 
-        void OnLoginButtonClicked(object sender, EventArgs args)
+        async void OnLoginButtonClicked(object sender, EventArgs args)
         {
             //var response = await DependencyService.Get<IAuthService>().Authenticate(Settings.TenantId, Settings.graphResourceUri, Settings.clientId, Settings.returnUri, Settings.ClientSecret);
 
             var opcVaultOptions = new OpcVaultApiOptions();
             var azureADOptions = new OpcVaultAzureADOptions();
-            opcVaultOptions.BaseAddress = Settings.AppServiceURL;
-            opcVaultOptions.ResourceId = Settings.graphResourceUri;
-            azureADOptions.ClientId = Settings.clientId;
-            azureADOptions.ClientSecret = Settings.ClientSecret;
-            azureADOptions.Authority = Settings.commonAuthority;
-            azureADOptions.TenantId = Settings.TenantId;
+
+            using (var cts = new CancellationTokenSource())
+            {
+                var Settings = await ConfigurationManager.Instance.GetAsync(cts.Token);
+
+                opcVaultOptions.BaseAddress = Settings.AppServiceURL;
+                opcVaultOptions.ResourceId = Settings.graphResourceUri;
+                azureADOptions.ClientId = Settings.clientId;
+                azureADOptions.ClientSecret = Settings.ClientSecret;
+                azureADOptions.Authority = Settings.commonAuthority;
+                azureADOptions.TenantId = Settings.TenantId;
+
+            }
+
+            
 
             var serviceClient = new OpcVaultLoginCredentials(opcVaultOptions, azureADOptions);
             IOpcVault opcVaultServiceClient = new Microsoft.Azure.IIoT.OpcUa.Api.Vault.OpcVault(new Uri(opcVaultOptions.BaseAddress), serviceClient);

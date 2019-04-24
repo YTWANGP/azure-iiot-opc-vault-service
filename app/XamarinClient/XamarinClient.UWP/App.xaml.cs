@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using XamarinClient.Configuration;
+using XamarinClient.UWP.Configuration;
 
 namespace XamarinClient.UWP
 {
@@ -53,6 +55,7 @@ namespace XamarinClient.UWP
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 Xamarin.Forms.Forms.Init(e);
+                ConfigurationManager.Initialize(new UwpConfigurationStreamProviderFactory());
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

@@ -969,6 +969,23 @@ if (-Not $onlyBuild)
     $moduleConfigPath = Join-Path -Path $deploydir -ChildPath "$($resourceGroupName).module.config"
     Write-Output $moduleConfiguration | Out-File -FilePath $moduleConfigPath -Encoding ascii
 
+
+    # build appsettings.json for xamarin app
+    $appConfiguration = '{'+"`r`n"
+    $appConfiguration += '        "TenantId": "'+$($aadConfig.TenantId)+'",'+"`r`n"
+    $appConfiguration += '        "ClientSecret": "'+$($aadConfig.ClientSecret)+'",'+"`r`n"
+    $appConfiguration += '        "ClientId": "'+$($aadConfig.ClientId)+'",'+"`r`n"
+    $appConfiguration += '        "graphResourceUri": "'+$($aadConfig.ServiceId)+'",'+"`r`n"
+    $appConfiguration += '        "AppServiceURL": "'+$serviceUrls[1]+'",'+"`r`n"
+    $appConfiguration += '        "commonAuthority":"https://login.microsoftonline.com/"'+"`r`n"
+    $appConfiguration += '}'+"`r`n"
+
+    # save config for user, e.g. for VS debugging of the application
+    $appsettingsPath = Join-Path -Path $deploydir -ChildPath "xamarin.appsettings.json"
+    Write-Output $appConfiguration | Out-File -FilePath $appsettingsPath -Encoding ascii
+    Write-Host "Saved xamarin app configuration: xamarin.appsettings.json"
+
+
     if ($development)
     {
         # build appsettings.Development.json for web app
