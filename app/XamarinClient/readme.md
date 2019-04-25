@@ -11,6 +11,7 @@ The client has implemented these functionalities:
 
 ## Install Xamarin UWP package
 We provide sample app package for you to install and run the application. There are x86 and x64 versions under XamarinClient.UWP\AppPackages directory.
+
 1. You need to import AAD configuration at the first time running. You can have the xamarin.appsettings.json with AAD configuration after deploy OPC Vault service or create the configuration file by yourself.
 
 ## How to build and run the sample in Visual Studio on Windows
@@ -39,6 +40,8 @@ We provide sample app package for you to install and run the application. There 
 2. Select UA Xamarin Client.UWP as startup project.
 
 3. Hit `F5` to build and execute the sample.
+
+4. Import xamarin.appsettings.json at first time running.
 
 ## How to use the sample xamarin app
 
