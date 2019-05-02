@@ -1,4 +1,4 @@
-# UA Xamarin Client
+# OPC Vault Certificate Management Client
 This sample runs on the following platform: Windows (UWP).
 
 The client has implemented these functionalities:
