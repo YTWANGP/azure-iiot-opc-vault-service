@@ -9,7 +9,7 @@ The client has implemented these functionalities:
 
 - Download new certificate and issuer from azure-iiot-opc-vault-service and push to OPC UA server.
 
-## Install Xamarin UWP package
+## Install and run Xamarin UWP package directly
 We provide sample app package for you to install and run the application. There are x86 and x64 versions under XamarinClient.UWP\AppPackages directory.
 
 1. You need to import AAD configuration at the first time running. You can have deploy\xamarin.appsettings.json with AAD configuration after deploy OPC Vault service with deploy.ps1 or create the configuration file by yourself.
