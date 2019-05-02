@@ -16,7 +16,8 @@ We provide sample app package for you to install and run the application. There 
 2. Manually sign the Digital Signature
     - Right Click UWP package -> Properties -> Digital Signatures -> Details -> View Certificate -> Install Certificate
     - Choose local machine as Store Location -> Choose Place all certificates in the following store and browse to "Trusted People"
-3. Import AAD configuration at the first time running. You can have deploy\xamarin.appsettings.json with AAD configuration after deploy OPC Vault service with deploy.ps1 or create the configuration file by yourself.
+3. Install UWP package
+4. Import AAD configuration at the first time running. You can have deploy\xamarin.appsettings.json with AAD configuration after deploy OPC Vault service with deploy.ps1 or create the configuration file by yourself.
 
 ## How to build and run the sample in Visual Studio on Windows
 
